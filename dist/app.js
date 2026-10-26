@@ -32,7 +32,7 @@ function renderGrid(){
     card.className='flower-card';
     card.dataset.flower=String(i);
     card.setAttribute('aria-label',`${flower.name} — рассмотреть цветок`);
-    card.innerHTML=`<span class="flower-sprite card-image" style="${spriteStyle(i)}" aria-hidden="true"></span><span class="card-caption"><span>${flower.name}</span><span class="card-arrow" aria-hidden="true">↗</span></span><span class="card-meta"><span class="card-price">${flower.price} BYN</span></span>`;
+    card.innerHTML=`<span class="flower-sprite card-image" style="${spriteStyle(i)}" aria-hidden="true"></span><span class="card-caption"><span>${flower.name}</span><span class="card-arrow" aria-hidden="true"><svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span><span class="card-meta"><span class="card-price">${flower.price} BYN</span></span>`;
     card.addEventListener('click',()=>openFlower(i));
     grid.append(card);
   });
