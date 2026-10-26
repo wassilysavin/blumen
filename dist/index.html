@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fdfdfb">
+  <meta name="description" content="blumen.by — цветы для сада и дома. Гомель. Телефон: +375 29 646-93-89.">
+  <title>blumen.by — цветы для сада и дома</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="information.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand-link" href="./" aria-label="blumen.by — главная">
+      <img src="assets/logo.png" alt="" width="40" height="40">
+      <span>blumen.by</span>
+    </a>
+    <nav class="navigation" aria-label="Главное меню">
+      <a class="nav-link" href="#contacts" data-section>Контакты</a>
+      <a class="nav-link" href="#about" data-section>Информация</a>
+      <button class="nav-link" disabled title="Раздел появится позже">Доставка</button>
+    </nav>
+    <span class="brand-tagline">маленький мир цветов</span>
+  </header>
+
+  <main>
+    <section class="orbit-view" id="orbit-view" aria-label="Круговая галерея цветов">
+      <div class="orbit-stage">
+        <div class="orbit" id="orbit"></div>
+        <div class="orbit-center">
+          <h1>blumen.by</h1>
+          <button class="text-link" id="view-all">Каталог <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+    </section>
+    <section class="collection-view" id="collection-view" aria-labelledby="collection-title" hidden>
+      <div class="collection-heading">
+        <h1 id="collection-title">Каталог</h1>
+        <button class="text-link back-to-orbit">К кругу <span aria-hidden="true">↗</span></button>
+      </div>
+      <p class="catalog-note">Пример ассортимента. Наличие и цены уточняются.</p>
+      <div class="flower-grid" id="flower-grid"></div>
+    </section>
+
+    <div id="home-information">
+      <section class="information-section contact-section" id="contacts" aria-labelledby="contacts-title" tabindex="-1">
+        <h2 id="contacts-title">Контакты</h2>
+        <div class="contact-list">
+          <a href="tel:+375296469389">+375 (29) 646-93-89</a>
+          <p>г. Гомель</p>
+        </div>
+      </section>
+      <section class="information-section" id="about" aria-labelledby="information-title" tabindex="-1">
+        <h2 id="information-title">Информация</h2>
+        <p class="intro-copy">Цветы для сада и дома.</p>
+        <p class="template-note">Ассортимент и условия пока шаблонные.</p>
+        <div class="information-accordion">
+          <details id="order" tabindex="-1">
+            <summary>Как заказать <span class="accordion-icon" aria-hidden="true"></span></summary>
+            <div class="information-answer"><p>Выберите растение и <a href="#contacts" data-section>свяжитесь с нами</a>. Согласуем наличие, цену и получение.</p></div>
+          </details>
+          <details id="care" tabindex="-1">
+            <summary>Посадка и уход <span class="accordion-icon" aria-hidden="true"></span></summary>
+            <div class="information-answer"><p>Рекомендации зависят от вида и сорта.</p><p class="placeholder-copy">[Краткая памятка по посадке, поливу и сезонному уходу.]</p></div>
+          </details>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <dialog class="flower-dialog" id="flower-dialog" aria-labelledby="flower-name">
+    <button class="close-button" data-close aria-label="Закрыть">×</button>
+    <div class="detail-visual"><div class="flower-sprite detail-flower" id="detail-flower" role="img"></div></div>
+    <div class="detail-copy">
+      <h2 id="flower-name"></h2>
+      <dl class="product-placeholder"><div><dt>Наличие</dt><dd>Уточняется</dd></div><div><dt>Цена</dt><dd id="flower-price"></dd></div></dl>
+      <a class="text-link detail-contact" href="#contacts" data-section>Как заказать <span aria-hidden="true">↗</span></a>
+      <div class="detail-navigation"><button id="previous-flower" aria-label="Предыдущий цветок">←</button><span id="detail-position"></span><button id="next-flower" aria-label="Следующий цветок">→</button></div>
+    </div>
+  </dialog>
+</body>
+</html>
